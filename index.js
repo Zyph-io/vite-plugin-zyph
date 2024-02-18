@@ -2,7 +2,7 @@ export default () => {
   let config;
   let mode;
   return {
-    name: "my-plugin",
+    name: "zyph-plugin",
     config(config, env) {
       console.log("start", env);
       mode = env.mode;
@@ -19,7 +19,8 @@ export default () => {
       <style>
         @import url("./zyph/vars.css");
       </style>
-      <script type="module" src="zyph"></script>
+      <script type="module" src="zyph">
+      </script>
     </head>
       `
       );
