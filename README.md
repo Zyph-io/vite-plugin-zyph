@@ -1,5 +1,6 @@
 # vite-plugin-zyph
-inject zyph files
+
+vite plugin to connect to Zyph SDK
 
 ## install
 
