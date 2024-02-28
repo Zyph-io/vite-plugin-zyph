@@ -23,16 +23,9 @@ export default () => {
       config = resolvedConfig;
     },
     transform(code, id) {
-      // Este hook será chamado para cada arquivo durante o build
-      // Verifique se o arquivo é um CSS
       if (!id.endsWith(".css")) return;
-      console.log(jsonConfig.id);
-      // Aqui você pode modificar o conteúdo do CSS
-      const novoCodigo = code.replace(/\/\*# sourceMappingURL=.+\*\//, "");
-      // Retorne o novo código modificado
       return {
-        code: novoCodigo,
-        map: null, // Se você modificar o código, provavelmente vai querer retornar um novo SourceMap
+        code: `[data-component="${jsonConfig.id}"]{ ${code} }`,
       };
     },
     // https://vitejs.dev/guide/api-plugin#transformindexhtml
