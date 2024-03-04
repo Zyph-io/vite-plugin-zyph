@@ -23,7 +23,7 @@ export default () => {
       config = resolvedConfig;
     },
     transform(code, id) {
-      if (!id.endsWith(".css") || !jsonConfig || mode !== "production") return;
+      if (!id.endsWith(".css") || !jsonConfig) return;
       return {
         code: `[data-component="${jsonConfig.id}"]{ ${code} }`,
       };
